@@ -3,5 +3,5 @@ all: build
 	@sudo cp _build/default/bin/lotofacil /usr/bin/
 
 build:
-	@opam exec -- dune build
+	@opam exec -- dune build --profile=release
 	@mv _build/default/bin/main.exe _build/default/bin/lotofacil

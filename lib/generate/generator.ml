@@ -50,6 +50,8 @@ module Generator = struct
     | [] -> Printf.printf "\b\b"
 
   (* --------------------------------------- *)
+
+  (** generate loto numbers from 1 - numbers *)
   let generate(number: int): unit =
     let final: int list = rand_select (range 1 25) number in
 
