@@ -8,13 +8,14 @@ module Generator = struct
       | _ :: tail -> lst_len_tail' tail (result + 1)
     in lst_len_tail' lst 0
 
+  (* ----------------------------------------------------------- *)
+
   let rand_select (lst: int list) (n: int): int list =
-    (* Extracts an elem when n = 0, appending tail at the end of acc *)
     let rec extract_rnd acc n = function
       | [] -> raise Not_found
       | head :: tail ->
-        if n = 0 then (head, acc @ tail)
-        else extract_rnd (head :: acc) (n - 1) tail
+        if n = 0 then (head, acc @ tail) (* Extracts an elem when n = 0, appending tail at the end of acc *)
+        else extract_rnd (head :: acc) (n - 1) tail (* Continues with tail, prepending head to the acc *)
     in
 
     let rec rand' n len acc = function
@@ -31,6 +32,8 @@ module Generator = struct
     let len = (lst_len_tail lst) in
 
     rand' n len [] lst
+
+  (* ------------------------------------------------------------ *)
 
   let range (srt: int) (nd: int) =
     let rec range' (acc: int list) srt nd =
@@ -49,5 +52,6 @@ module Generator = struct
   (* --------------------------------------- *)
   let generate(number: int): unit =
     let final: int list = rand_select (range 1 25) number in
-    printer final
+
+    printer (List.sort (fun x y -> compare x y) final)
 end

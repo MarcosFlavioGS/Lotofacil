@@ -27,7 +27,7 @@ let () =
 
     | _ -> print_endline (
         "Invalid_argument. Usage: " ^
-        "\n lotofacil 25"
+        "\n > lotofacil <how_many_numbers>"
       )
   in
 

@@ -53,5 +53,5 @@ module Generator = struct
   let generate(number: int): unit =
     let final: int list = rand_select (range 1 25) number in
 
-    printer final
+    printer (List.sort (fun x y -> compare x y) final)
 end

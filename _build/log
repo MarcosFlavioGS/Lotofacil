@@ -3,7 +3,7 @@
 # Shared cache: disabled
 # Workspace root: /home/mflavio/workspace/projects/loto-facil/lotofacil
 # Auto-detected concurrency: 8
-$ /home/mflavio/.opam/default/bin/ocamlc.opt -config > /tmp/dune_705d26_output
+$ /home/mflavio/.opam/default/bin/ocamlc.opt -config > /tmp/dune_a42343_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -102,5 +102,6 @@ $ /home/mflavio/.opam/default/bin/ocamlc.opt -config > /tmp/dune_705d26_output
 #      }
 #  ; instrument_with = []
 #  }
-$ (cd _build/default && /home/mflavio/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I bin/.main.eobjs/byte -I bin/.main.eobjs/native -I lib/.lotofacil.objs/byte -I lib/.lotofacil.objs/native -I lib/generate/.generator.objs/byte -I lib/generate/.generator.objs/native -intf-suffix .ml -no-alias-deps -opaque -o bin/.main.eobjs/native/dune__exe__Main.cmx -c -impl bin/main.ml)
-$ (cd _build/default && /home/mflavio/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o bin/main.exe lib/lotofacil.cmxa lib/generate/generator.cmxa bin/.main.eobjs/native/dune__exe__Main.cmx)
+$ (cd _build/default && /home/mflavio/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/generate/.generator.objs/byte -intf-suffix .ml -no-alias-deps -opaque -o lib/generate/.generator.objs/byte/generator.cmo -c -impl lib/generate/generator.ml)
+$ (cd _build/default && /home/mflavio/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o lib/generate/generator.cma lib/generate/.generator.objs/byte/generator.cmo)
+$ (cd _build/default && /home/mflavio/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I lib/generate -o lib/generate/generator.cmxs lib/generate/generator.cmxa)
