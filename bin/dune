@@ -1,4 +1,4 @@
 (executable
  (public_name lotofacil)
  (name main)
- (libraries lotofacil))
+ (libraries lotofacil generator))
