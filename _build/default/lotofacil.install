@@ -1,8 +1,0 @@
-lib: [
-  "_build/install/default/lib/lotofacil/META"
-  "_build/install/default/lib/lotofacil/dune-package"
-  "_build/install/default/lib/lotofacil/opam"
-]
-bin: [
-  "_build/install/default/bin/lotofacil"
-]
