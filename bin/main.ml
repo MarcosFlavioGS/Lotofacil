@@ -15,15 +15,22 @@ let check_args (): string list =
 (* Entrypoint *)
 let () =
   let argv: string list = check_args () in
+
   let exec_commands = function
-    | _ :: numbers :: [] when int_of_string numbers <= 20 && int_of_string numbers >= 15 ->
+    | [_ ; numbers] when int_of_string numbers <= 20 && int_of_string numbers >= 15 ->
       Gen.generate (int_of_string numbers)
 
-    | _ :: numbers :: [] when int_of_string numbers > 20 ->
+    | [_ ; numbers] when int_of_string numbers > 20 ->
       Printf.printf "%s is way too high. Please select a range of 15 - 20" numbers
         
-    | _ :: numbers :: [] when int_of_string numbers < 15 ->
+    | [_ ; numbers] when int_of_string numbers < 15 ->
       Printf.printf "%s is way too low. Please select a range of 15 - 20" numbers
+
+    | lst when (List.length lst > 2) ->
+      print_endline (
+        "Too many arguments. Usage: " ^
+        "\n > lotofacil <how_many_numbers>"
+      )
 
     | _ -> print_endline (
         "Invalid_argument. Usage: " ^

@@ -4,11 +4,11 @@ synopsis: "A short synopsis"
 description: "A longer description"
 maintainer: ["Maintainer Name"]
 authors: ["Author Name"]
-license: "MIT"
+license: "LICENSE"
 tags: ["topics" "to describe" "your" "project"]
-homepage: "https://github.com/MarcosFlavioGS/Lotofacil"
+homepage: "https://github.com/username/reponame"
 doc: "https://url/to/documentation"
-bug-reports: "https://github.com/MarcosFlavioGS/Lotofacil/issues"
+bug-reports: "https://github.com/username/reponame/issues"
 depends: [
   "ocaml"
   "dune" {>= "3.11"}

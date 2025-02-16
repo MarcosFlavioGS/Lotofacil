@@ -8,7 +8,6 @@ module Generator = struct
       | _ :: tail -> lst_len_tail' tail (result + 1)
     in lst_len_tail' lst 0
 
-  (* ----------------------------------------------------------- *)
 
   let rand_select (lst: int list) (n: int): int list =
     let rec extract_rnd acc n = function
@@ -33,7 +32,6 @@ module Generator = struct
 
     rand' n len [] lst
 
-  (* ------------------------------------------------------------ *)
 
   let range (srt: int) (nd: int) =
     let rec range' (acc: int list) srt nd =
@@ -49,11 +47,10 @@ module Generator = struct
       printer tail
     | [] -> Printf.printf "\b\b"
 
-  (* --------------------------------------- *)
 
-  (** generate loto numbers from 1 - numbers *)
-  let generate(number: int): unit =
-    let final: int list = rand_select (range 1 25) number in
+  (** Generate loto numbers from 1 - numbers *)
+  let generate(numbers: int): unit =
+    let final: int list = rand_select (range 1 25) numbers in
 
     printer (List.sort (fun x y -> compare x y) final)
 end
